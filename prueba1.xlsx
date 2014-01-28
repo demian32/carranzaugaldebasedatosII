@@ -4,17 +4,21 @@ composicion_quimica	 fecha_vecimiento	  precio  	presentacion	  concentracion_me
      omeprazol	       13/09/2014	      $12.00 	 tableta,ampolla	      300mg,500mg	        antiobioctico,antiacido	         elmor,bsum	    genoprazol,otro
 		
 		
-		                               	5    identidades encontradas				
+		                               				
 							
 							
 							
 MEDICAMENTO							
-composicion_quimica							
-fecha_vencimiento							
-precio							
-presentacion							
-concentracion_medicamento							
-uso_terapeutico							
-laboratorio 							
-nombre_comercial							
 
+ composicion_quimica							
+ fecha_vencimiento							
+ precio							
+*******presentacion****
+*******concentracion_medicamento***							
+*******uso_terapeutico******							
+*******laboratorio****** 							
+*******nombre_comercial*****							
+
+
+
+****** =	5    identidades encontradas
