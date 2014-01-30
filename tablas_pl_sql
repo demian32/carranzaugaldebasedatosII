@@ -1,0 +1,83 @@
+
+CREATE TABLE PELICULA(
+ID_PELICULA INTEGER,
+TITULO VARCHAR2(80),
+DIRECTOR VARCHAR2(80),
+SINOPSIS VARCHAR2(500),
+CONSTRAINT ID_PELICULA_PK PRIMARY KEY (ID_PELICULA))
+
+//creacion de la tabla pelicula y el uso de CONSTRAINT para indicar la primary key de la tabla dandole un
+   identificador (ID_PELICULA_PK)  y el basico PRIMARY KEY//
+-------------------------------------------------------------------------------------------------------------------
+
+CREATE TABLE HORARIOS(
+ID_PELICULA INTEGER,
+HORARIO TIMESTAMP,
+CONSTRAINT ID_PELICULA_FK_HR FOREIGN KEY (ID_PELICULA) REFERENCES PELICULA (ID_PELICULA))
+
+//creacion de la tabla horarios  y el uso de CONSTRAINT para indicar el FOREIGN KEY y su identificador
+  (ID_PELICULA_FK_HR) yy la referencia de la tabla que es REFERENCES PELICULA
+--------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO PELICULA VALUES(1,'JURASSIC PARK','STEVEN','ES DE DINOSAURIOS')
+
+INSERT INTO HORARIOS VALUES(1, TIMESTAMP '2014-1-29 20:20:00')
+
+ 
+INTRODUCCION A PL/SQL
+
+BEGIN
+
+DBMS_OUTPUT.PUT_LINE('MI PRIMER PROGRAMA PL SQL');
+
+//IMPRIME LA FRASE MI PRIMER PL SQL
+
+END;
+/
+---------------------------------------------------------------------------------------------------------------------------
+DECLARE   //inicio de delcaracion de variables
+
+NOMBRE VARCHAR2(80);
+
+X FLOAT;
+Y FLOAT;
+Z FLOAT;
+
+BEGIN  //indica el inicio del programa
+
+NOMBRE:='DAMIAN CARRANZA';
+X:=10;
+Y:=2;
+Z:=X/Y;
+
+DBMS_OUTPUT.PUT_LINE('BIENVENIDO '||NOMBRE);
+DBMS_OUTPUT.PUT_LINE('EL COCIENTE  DE '||X||' ENTRE '||Y||' ES: '||Z);
+
+END;  //finalizar programa del BEGIN
+/      // siempre se pone esta " / " al final
+-----------------------------------------------------------------------------------------
+//imprime los primeros 20 enteros y que indique cuales son par y nones atravez de estructua for e if
+
+BEGIN
+
+FOR I IN 1..20 LOOP
+IF MOD( I,2)=0 THEN
+DBMS_OUTPUT.PUT_LINE(I||' ES PAR');
+ELSE
+DBMS_OUTPUT.PUT_LINE(I||' ES NON');
+
+END IF;
+END LOOP;
+END;
+/
+-------------------------------------------------------------------------
+//inserta 10,000 registros cuyo nombre sea 'juan' y el indice se autoincremente
+
+BEGIN 
+FOR I IN 1..10000 LOOP
+INSERT INTO PRUEBA VALUES(I,'JUAN');
+END LOOP;
+END;
+/
+
+--------------------------------------------------------------------------------
