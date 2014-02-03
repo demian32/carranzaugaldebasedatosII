@@ -1,0 +1,23 @@
+
+PROCEDIMIENTO ALMACENADO PARA EVITAR ESCRIBIR EL CODIGO DE IMPRIMIR
+---------------------------------------------------------------------------
+CREATE OR REPLACE PROCEDURE IMPRIME(IMPRESION IN VARCHAR2) AS
+BEGIN
+DBMS_OUTPUT.PUT_LINE(IMPRESION);
+END;
+/
+---------------------------------------------------------------------------
+PROCEDIMIENTO ALMACENADO PARA EVITAR QUE UN USUARIO SEA MENOR DE 18 AÑOS AGREGANDO UNA EXCEPCION EXISTENTE
+----------------------------------------------------------------------------------------------
+
+CREATE OR REPLACE INSERTARUSUARIO(MY_NOMBRE VARCHAR2,MY_EDAD INTEGER,MY_ID INTEGER) AS
+BEGIN 
+ IF MY_EDAD < 18 THEN 
+ RAISE_APPLICATION_ERROR(-20000,'LO SIENTO TU SER PEQUEÑO');
+ELSE
+ INSERT IN TO USUARIO VALUES(MY_ID,MY_NOMBRE,MY_EDAD);
+ IMPRIME('USUARIO GUARDADO CON EXITO');
+END IF;
+END;
+/
+-------------------------------------------------------------------------------------
